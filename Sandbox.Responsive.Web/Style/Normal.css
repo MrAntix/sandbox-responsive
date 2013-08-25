@@ -19,6 +19,7 @@ div {
 body,
 header,
 section,
+aside,
 footer,
 div,
 span {
@@ -37,5 +38,5 @@ p,
 ul,
 li {
   margin: 0;
-  padding: 10px 5px;
+  padding: 10px;
 }

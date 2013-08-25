@@ -19,6 +19,7 @@ div {
 body,
 header,
 section,
+aside,
 footer,
 div,
 span {
@@ -37,19 +38,22 @@ p,
 ul,
 li {
   margin: 0;
-  padding: 10px 5px;
+  padding: 10px;
 }
 .scrollVert {
   overflow: auto;
   overflow-x: visible;
   -webkit-overflow-scrolling: touch;
 }
-.text {
-  padding: 0 .5em;
-}
 .shadow {
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 10px;
+}
+.contentLeft {
+  padding-left: 15%;
+}
+.contentRight {
+  padding-right: 15%;
 }
 body {
   width: 100%;
@@ -63,10 +67,9 @@ body {
   box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 10px;
   position: absolute;
   overflow: hidden;
-  max-width: 1000px;
   height: 200%;
-  left: 10%;
-  right: 10%;
+  left: 0;
+  right: 0;
   padding: 0;
   margin: 0 auto;
   background-color: red;
@@ -74,6 +77,8 @@ body {
 #Page > header {
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 10px;
+  padding-left: 15%;
+  padding-right: 15%;
   position: absolute;
   top: 0;
   left: 0;
@@ -85,20 +90,22 @@ body {
   overflow: auto;
   overflow-x: visible;
   -webkit-overflow-scrolling: touch;
+  padding-right: 15%;
   position: absolute;
   top: 60px;
   bottom: 40px;
-  left: 30%;
+  left: 40%;
   right: 0;
 }
 #Page > aside {
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 10px;
+  padding-left: 15%;
   position: absolute;
   top: 60px;
   bottom: 40px;
   left: 0;
-  width: 30%;
+  width: 40%;
   background-color: orange;
   -moz-transition: left .2s ease;
   -o-transition: left .2s ease;
@@ -116,6 +123,8 @@ body {
 #Page > footer {
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 10px;
+  padding-left: 15%;
+  padding-right: 15%;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -125,25 +134,45 @@ body {
   text-align: right;
 }
 @media only screen and (max-width: 1000px) {
-  #Page {
-    left: 5%;
-    right: 5%;
+  #Page > header,
+  #Page > footer {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  #Page > section {
+    padding-right: 10%;
+  }
+  #Page > aside {
+    padding-left: 10%;
   }
 }
 @media only screen and (max-width: 800px) {
-  #Page {
-    min-width: 280px;
-    left: 0;
-    right: 0;
+  #Page > header,
+  #Page > footer {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  #Page > section {
+    padding-right: 5%;
+  }
+  #Page > aside {
+    padding-left: 5%;
   }
 }
 @media only screen and (max-width: 568px) {
+  #Page > header,
+  #Page > footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
   #Page > section {
     left: 5%;
+    padding-right: 0;
   }
   #Page > aside {
     left: -75%;
     width: 80%;
+    padding-left: 0;
   }
   #Page > aside > a {
     float: right;

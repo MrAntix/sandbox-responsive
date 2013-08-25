@@ -17,9 +17,8 @@ body {
     position:absolute;
     overflow:hidden;
 
-    max-width:1000px;
-    height:200%;
-    left:10%;right:10%;
+    height:100%;
+    left:0;right:0;
     padding:0;margin:0 auto;
 
     background-color: red;
@@ -27,6 +26,8 @@ body {
 
 #Page>header{
     .shadow;
+    .contentLeft;
+    .contentRight;
 
     position:absolute; 
 
@@ -40,21 +41,23 @@ body {
 
 #Page>section{
     .scrollVert;
+    .contentRight;
 
     position:absolute;
 
     top:@headerHeight;bottom:@footerHeight;
-    left:30%;right:0;
+    left:40%;right:0;
 }
 
 #Page>aside{
     .shadow;
+    .contentLeft;
 
     position:absolute;
 
     top:@headerHeight;bottom:@footerHeight;
     left:0;
-    width:30%;
+    width:40%;
 
     background-color: orange;
 
@@ -73,6 +76,8 @@ body {
 
 #Page>footer{
     .shadow;
+    .contentLeft;
+    .contentRight;
 
     position:absolute;
 
@@ -87,29 +92,49 @@ body {
 }
 
 @media only screen and (max-width: 1000px) {
-    #Page {
-        left: 5%;
-        right: 5%;
+    #Page > header,
+    #Page > footer {
+        padding-left:10%;
+        padding-right:10%;
+    }
+    #Page > section {
+        padding-right:10%;
+    }
+    #Page > aside {
+        padding-left:10%;
     }
 }
 
 @media only screen and (max-width: 800px) {
-    #Page {
-        min-width: 280px;
-        left: 0;
-        right: 0;
+    #Page > header,
+    #Page > footer {
+        padding-left:5%;
+        padding-right:5%;
+    }
+    #Page > section {
+        padding-right:5%;
+    }
+    #Page > aside {
+        padding-left:5%;
     }
 }
 
 @media only screen and (max-width: 568px) {
+    #Page > header,
+    #Page > footer {
+        padding-left:0;
+        padding-right:0;
+    }
 
     #Page > section {
         left: 5%;
+        padding-right:0;
     }
 
     #Page > aside {
         left: -75%;
         width: 80%;
+        padding-left:0;
     }
 
         #Page > aside > a {

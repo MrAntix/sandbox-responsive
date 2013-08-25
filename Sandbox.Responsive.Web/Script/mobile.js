@@ -34,6 +34,7 @@
         }, false);
     }
 
+    page.style.height = "200%";
     var setHeight = function () {
         page.style.height = (win.innerHeight ? win.innerHeight : doc.documentElement.clientHeight) + "px";
     };
