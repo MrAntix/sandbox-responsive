@@ -67,7 +67,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 10px;
   position: absolute;
   overflow: hidden;
-  height: 200%;
+  height: 100%;
   left: 0;
   right: 0;
   padding: 0;
@@ -109,6 +109,7 @@ body {
   background-color: orange;
   -moz-transition: left .2s ease;
   -o-transition: left .2s ease;
+  -webkit-transition: left .2s ease;
   transition: left .2s ease;
 }
 #Page > aside > section {
@@ -131,6 +132,7 @@ body {
   right: 0;
   height: 40px;
   background-color: blue;
+  color: lightblue;
   text-align: right;
 }
 @media only screen and (max-width: 1000px) {

@@ -67,6 +67,7 @@ body {
   background-color: orange;
   -moz-transition: left .2s ease;
   -o-transition: left .2s ease;
+  -webkit-transition: left .2s ease;
   transition: left .2s ease;
 }
 #Page > aside > section {
@@ -89,6 +90,7 @@ body {
   right: 0;
   height: 40px;
   background-color: blue;
+  color: lightblue;
   text-align: right;
 }
 @media only screen and (max-width: 1000px) {
