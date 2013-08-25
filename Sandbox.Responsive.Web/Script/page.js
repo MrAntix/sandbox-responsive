@@ -6,11 +6,11 @@
     var doc = win.document,
         page = doc.getElementById("Page"),
         setHeight = function () {
-            if (!doc.body) return;
+            if (!win.innerHeight) return;
             
             doc.body.style.marginBottom = "1000px";
             win.scrollTo(0, 1);
-            page.style.height = (win.innerHeight ? win.innerHeight : doc.documentElement.clientHeight) + "px";
+            page.style.height = win.innerHeight + "px";
             doc.body.style.marginBottom = "0";
 
             var id = win.setInterval(function() {
