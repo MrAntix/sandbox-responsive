@@ -38,5 +38,8 @@ p,
 ul,
 li {
   margin: 0;
-  padding: 10px;
+  padding: 5px 10px;
+}
+a {
+  color: inherit;
 }

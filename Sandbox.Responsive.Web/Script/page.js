@@ -5,20 +5,20 @@
 
     var doc = win.document,
         page = doc.getElementById("Page"),
-        setHeight = function () {
+        setHeight = function() {
             if (!win.innerHeight) return;
-            
-            doc.body.style.marginBottom = "1000px";
-            win.scrollTo(0, 1);
-            page.style.height = win.innerHeight + "px";
-            doc.body.style.marginBottom = "0";
 
-            var id = win.setInterval(function() {
-                if (doc.body) {
-                    clearInterval(id);
-                    win.scrollTo(0, 0);
-                }
-            }, 15);
+            if (!doc.body)
+                win.setTimeout(setHeight, 15);
+            
+            else {
+                
+                doc.body.style.marginBottom = "1000px";
+                win.scrollTo(0, 1);
+                page.style.height = win.innerHeight + "px";
+                doc.body.style.marginBottom = "0";
+                win.scrollTo(0, 0);
+            }
         };
     
     setHeight();
