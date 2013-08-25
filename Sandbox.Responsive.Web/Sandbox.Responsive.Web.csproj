@@ -59,7 +59,7 @@
   <ItemGroup>
     <Content Include="Default.htm" />
     <Content Include="Script\html5shiv.js" />
-    <Content Include="Script\mobile.js" />
+    <Content Include="Script\page.js" />
     <Content Include="Style\Layout.css">
       <DependentUpon>Layout.less</DependentUpon>
     </Content>
