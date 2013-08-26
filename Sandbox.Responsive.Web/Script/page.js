@@ -5,22 +5,38 @@
 
     var doc = win.document,
         page = doc.getElementById("Page"),
-        setHeight = function() {
-            if (!win.innerHeight) return;
+        heightMap = {},
+        setHeight = function () {
+            if (!page) throw "An element with id 'Page' is not found";
+            
+            if (win.pageYOffset === undefined || win.pageYOffset > 20) return;
 
             if (!doc.body)
                 win.setTimeout(setHeight, 15);
-            
+
             else {
-                
-                doc.body.style.marginBottom = "1000px";
-                win.scrollTo(0, 1);
-                page.style.height = win.innerHeight + "px";
-                doc.body.style.marginBottom = "0";
-                win.scrollTo(0, 0);
+
+                var height = win.innerHeight;
+                if (heightMap[height]) {
+
+                    page.style.height = heightMap[height];
+                    win.setTimeout(function () {
+                        win.scrollTo(0, 1);
+                    }, 25);
+                } else {
+
+                    doc.body.style.marginBottom = "1000px";
+
+                    win.setTimeout(function () {
+                        heightMap[height] = win.innerHeight + "px";
+                        page.style.height = heightMap[height];
+                        win.scrollTo(0, 1);
+                        doc.body.style.marginBottom = "0";
+                    }, 250);
+                }
             }
         };
-    
+
     setHeight();
 
     if (win.addEventListener) win.addEventListener("resize", setHeight, false);
